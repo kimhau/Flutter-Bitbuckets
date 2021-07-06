@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bitbuckets/models/bitbucket_response.dart';
 import 'package:flutter_bitbuckets/repositories/bitbucket_repository.dart';
@@ -12,8 +13,7 @@ class MockRepository implements IBitbucketRepository {
   Future<BitbucketResponse> fetchBitbucketList(String after) async {
     await Future.delayed(Duration(milliseconds: 100));
 
-    if (true) {
-      // if (Random().nextBool()) {
+    if (Random().nextBool()) {
       return BitbucketResponse(pagelen: 10, values: [], next: "https://api.bitbucket.org/2.0/repositories?after=2011-09-03T12%3A33%3A16.028393%2B00%3A00");
     }
 
